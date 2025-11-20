@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="gradient">
+
+<!-- Dark Mode Toggle Button -->
+<button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+<header>
+    <h1>Welcome to Our Group Portfolio</h1>
+    <p>Hello! We are Group 7 - This webpage highlights our team members and what makes us unique.</p>
+</header>
+
+<section>
+    <h2>Meet Our Members</h2>
+    <ul class="team-list">
+        <li>
+            <a href="oliva.html" target="_blank">
+                <img src="images/oliva.jpg" alt="Denmark Oliva">
+                <strong>Denmark Oliva</strong> - Team Leader
+            </a>
+        </li>
+        <li>
+            <a href="villamor.html" target="_blank">
+                <img src="images/villamor.jfif" alt="Christian Joshua Villamor">
+                <strong>Christian Joshua Villamor</strong> - Bestfriend ni Leader
+            </a>
+        </li>
+        <li>
+            <a href="kyle.html" target="_blank">
+                <img src="images/me.jpg" alt="Kyle Brianth G. Delmonte">
+                <strong>Kyle Brianth G. Delmonte</strong> - Programmer
+            </a>
+        </li>
+        <li>
+            <a href="navarette.html" target="_blank">
+                <img src="images/Navarette.jpg" alt="William Edward Navarette">
+                <strong>William Edward Navarette</strong> - Adonis
+            </a>
+        </li>
+        <li>
+            <a href="guillermo.html" target="_blank">
+                <img src="images/bbbb.jpg" alt="Benedick Guillermo">
+                <strong>Benedick Guillermo</strong> - Bartender
+            </a>
+        </li>
+        <li>
+            <a href="manuel.html" target="_blank">
+                <img src="images/rolly.jfif" alt="Rollyboy Manuel">
+                <strong>Rollyboy Manuel</strong> - Extra
+            </a>
+        </li>
+    </ul>
+</section>
+
+<footer>
+    <p>© 2025 Group 5 | University of Eastern Pangasinan</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+
+toggleBtn.addEventListener('click', () => {
+    if(body.classList.contains('dark')){
+        body.classList.remove('dark');
+        body.classList.add('gradient');
+        toggleBtn.textContent = '🌙';
+    } else {
+        body.classList.remove('gradient');
+        body.classList.add('dark');
+        toggleBtn.textContent = '☀️';
+    }
+});
+</script>
+
+</body>
+</html>

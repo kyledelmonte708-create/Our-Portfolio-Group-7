@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyle Brianth G. Delmonte - Portfolio</title>
+
+<style>
+    /* ===== BODY ===== */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        transition: background 0.6s ease, color 0.6s ease;
+    }
+
+    /* ===== FIERY GRADIENT BACKGROUND ===== */
+    body.gradient {
+        background: linear-gradient(135deg, #ffcf00, #ff7300, #ff2e00);
+        background-size: 300% 300%;
+        animation: fireFlow 8s ease infinite;
+    }
+
+    @keyframes fireFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+        background: #121212;
+        color: #e0e0e0;
+        animation: none;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        padding: 60px 20px;
+        background-color: rgba(0,0,0,0.3);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        transition: background 0.5s ease;
+    }
+
+    body.dark header {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    h1 {
+        font-family: "Copperplate Gothic Bold", "Copperplate", fantasy;
+        font-size: 2.8em;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+    }
+
+    header p {
+        font-size: 1.2em;
+        color: #fff4d9;
+        text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    }
+
+    /* ===== PROFILE IMAGE ===== */
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        object-fit: cover;
+        margin-top: 20px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.6);
+        transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+        margin: 40px auto;
+        max-width: 800px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 25px 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        backdrop-filter: blur(4px);
+        text-align: left;
+        transition: background 0.5s ease;
+    }
+
+    body.dark section {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    h2 {
+        font-family: "Copperplate Gothic Bold", "Copperplate", fantasy;
+        color: #fff4d9;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    /* ===== LISTS ===== */
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        background-color: rgba(255,255,255,0.15);
+        padding: 12px 15px;
+        border-left: 5px solid #ff9c00;
+        border-radius: 8px;
+        margin: 10px 0;
+        transition: 0.3s;
+    }
+
+    li:hover {
+        background-color: rgba(255,255,255,0.25);
+        transform: scale(1.03);
+    }
+
+    body.dark li {
+        background-color: rgba(200,200,200,0.1);
+        border-left: 5px solid #ff9c00;
+    }
+
+    /* ===== CONTACTS ===== */
+    .contacts li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contacts a {
+        color: #fff4d9;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .contacts a:hover {
+        color: #ffe57f;
+        text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        background-color: rgba(0,0,0,0.3);
+        padding: 20px;
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: #fff4d9;
+        transition: background 0.5s ease;
+    }
+
+    body.dark footer {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    .back-link {
+        color: #fff4d9;
+        text-decoration: underline;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .back-link:hover {
+        color: #ffe57f;
+        text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
+
+    /* ===== DARK MODE TOGGLE BUTTON ===== */
+    #theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 10px 14px;
+        font-size: 24px;
+        transition: transform 0.4s ease, background 0.4s ease;
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.1) rotate(20deg);
+        background: rgba(255,255,255,0.3);
+    }
+
+    body.dark #theme-toggle {
+        background: rgba(200,200,200,0.2);
+    }
+
+</style>
+</head>
+
+<body class="gradient">
+
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+    <header>
+        <h1>Kyle Brianth G. Delmonte</h1>
+        <p>A Happy-Go-Lucky Programmer with a Burning Passion for Creativity 🔥</p>
+        <img src="C:\Users\LC\OneDrive\Documents\HCI\Group 5 portfolio\images/me.jpg" alt="Kyle Brianth G. Delmonte" class="profile-img">
+    </header>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            Hi! I’m <strong>Kyle Brianth G. Delmonte</strong>, a cheerful and optimistic person who believes that life 
+            is best lived with a smile. I’m the kind of person who stays calm under pressure and always finds fun in everything I do.  
+            As a <strong>programmer</strong>, I love bringing ideas to life through code — whether it’s building applications, designing web pages, 
+            or simply exploring new technologies.  
+            My happy-go-lucky attitude helps me connect with people easily and bring positive energy to every team I’m part of. ✨
+        </p>
+    </section>
+
+    <section class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>VB.NET Windows Forms Programming</li>
+            <li>HTML, CSS, and Web Design</li>
+            <li>Microsoft Access Database</li>
+            <li>Creative Thinking & Teamwork</li>
+        </ul>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>🔥 <strong>Virtual Keyboard</strong> — A VB.NET project that simulates key presses</li>
+            <li>🔥 <strong>Online Shop System</strong> — Manages products, users, and transactions</li>
+            <li>🔥 <strong>Password Manager</strong> — Secure account management app</li>
+        </ul>
+    </section>
+
+    <section class="contacts">
+        <h2>Contact Me</h2>
+        <ul>
+            <li>Email: <a href="mailto:kyledelmonte708@gmail.com">kyledelmonte708@gmail.com</a></li>
+            <li>Facebook: <a href="https://web.facebook.com/?_rdc=1&_rdr#" target="_blank">facebook.com/Kyle Delmonte</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p><a href="porfolio.html" class="back-link">⬅ Back to Team Portfolio</a></p>
+        <p>© 2025 Kyle Brianth G. Delmonte | Group 5 - The Innovators | University of Eastern Pangasinan</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', () => {
+            if(body.classList.contains('dark')){
+                body.classList.remove('dark');
+                body.classList.add('gradient');
+                toggleBtn.textContent = '🌙';
+            } else {
+                body.classList.remove('gradient');
+                body.classList.add('dark');
+                toggleBtn.textContent = '☀️';
+            }
+        });
+    </script>
+
+</body>
+</html>

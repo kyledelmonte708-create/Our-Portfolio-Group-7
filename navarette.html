@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William Edward Navarette - Portfolio</title>
+
+<style>
+    /* ===== BODY ===== */
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background 0.6s ease, color 0.6s ease;
+        color: #1a1a1a; /* Dark text for normal gradient */
+    }
+
+    /* ===== ANIMATED GRADIENT ===== */
+    body.gradient {
+        background: linear-gradient(135deg, #4b0082, #ffffff, #00008b);
+        background-size: 400% 400%;
+        animation: gradientFlow 12s ease infinite;
+        color: #1a1a1a; /* dark text over white */
+    }
+
+    @keyframes gradientFlow {
+        0% { background-position: 0% 50%; }
+        25% { background-position: 50% 50%; }
+        50% { background-position: 100% 50%; }
+        75% { background-position: 50% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+        background: #121212;
+        color: #e0e0e0; /* light text for dark mode */
+        animation: none;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        background: rgba(0, 0, 0, 0.85);
+        color: inherit;
+        text-align: center;
+        padding: 50px 0;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    body.dark header {
+        background: #1c1c1c;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 2.8em;
+        font-family: "Copperplate Gothic Bold", sans-serif;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 1.1em;
+        color: inherit;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+        background-color: rgba(255,255,255,0.1);
+        margin: 40px auto;
+        width: 80%;
+        max-width: 850px;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease, color 0.5s ease;
+        color: inherit;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    body.dark section {
+        background-color: rgba(50,50,50,0.85);
+    }
+
+    /* ===== ABOUT ===== */
+    .about img {
+        display: block;
+        margin: 20px auto;
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border: 4px solid #4b0082;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+        transition: border 0.5s ease;
+    }
+
+    body.dark .about img {
+        border: 4px solid #9370db;
+    }
+
+    .about p {
+        text-align: justify;
+        font-size: 1.05em;
+    }
+
+    /* ===== HEADINGS ===== */
+    h2, h3 {
+        text-align: center;
+        color: #4b0082; /* dark purple for normal */
+        margin-bottom: 20px;
+        font-size: 1.8em;
+    }
+
+    body.dark h2, body.dark h3 {
+        color: #9370db; /* lighter purple in dark mode */
+    }
+
+    /* ===== SKILLS ===== */
+    ul {
+        list-style-type: square;
+        padding-left: 40px;
+        font-size: 1.05em;
+        color: inherit;
+    }
+
+    /* ===== PROJECTS ===== */
+    .project {
+        background-color: rgba(255,255,255,0.15);
+        margin: 15px 0;
+        padding: 20px;
+        border-radius: 12px;
+        transition: background 0.3s ease, color 0.3s ease;
+        color: inherit;
+    }
+
+    .project:hover {
+        background-color: rgba(255,255,255,0.25);
+    }
+
+    body.dark .project {
+        background-color: rgba(100,80,150,0.2);
+    }
+
+    body.dark .project:hover {
+        background-color: rgba(100,80,150,0.35);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact a {
+        color: #4b0082;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+    }
+
+    body.dark .contact a {
+        color: #9370db;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        color: inherit;
+        padding: 15px 0;
+        margin-top: 40px;
+        font-size: 0.9em;
+        transition: background 0.5s ease;
+    }
+
+    body.dark footer {
+        background-color: #1c1c1c;
+    }
+
+    /* ===== DARK MODE TOGGLE BUTTON ===== */
+    #theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 10px 14px;
+        font-size: 24px;
+        transition: transform 0.4s ease, background 0.4s ease;
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.1) rotate(20deg);
+        background: rgba(255,255,255,0.3);
+    }
+
+    body.dark #theme-toggle {
+        background: rgba(200,200,200,0.2);
+    }
+</style>
+</head>
+<body class="gradient">
+
+<!-- DARK MODE TOGGLE -->
+<button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+<header>
+    <div class="container">
+        <h1>William Edward Navarette</h1>
+        <p>Student | Aspiring Developer | Tech Enthusiast</p>
+    </div>
+</header>
+
+<section class="about">
+    <h2>About Me</h2>
+    <img src="C:\Users\LC\OneDrive\Documents\HCI\Group 5 portfolio\images/Navarette.jpg" alt="My Photo">
+    <p>Hello! I’m William Edward, a passionate student who loves learning about technology and programming. I enjoy exploring how things work, creating small projects, and developing my skills in web development and coding. My goal is to become a skilled software developer who builds useful and creative digital solutions.</p>
+</section>
+
+<section class="skills">
+    <h2>My Skills</h2>
+    <ul>
+        <li>HTML, CSS, and JavaScript</li>
+        <li>Python Programming</li>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+        <li>Basic Graphic Design</li>
+    </ul>
+</section>
+
+<section class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Minesweeper Game</h3>
+        <p>A simple game I developed using Visual Basic. It includes custom graphics and animations.</p>
+    </div>
+    <div class="project">
+        <h3>Python Recursion Module</h3>
+        <p>An advanced Python exercise demonstrating recursion, iterators, and modules for clean code design.</p>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:navarettewilliam7@gmail.com">navarettewilliam7@gmail.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/williamedward.navarette" target="_blank">facebook.com/William Edward Navarette</a></p>
+</section>
+
+<footer>
+    <p><a href="porfolio.html" class="back-link">⬅ Back to Team Portfolio</a></p>
+    <p>© 2025 William Edward Navarette | My Personal Portfolio</p>
+</footer>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+        if(body.classList.contains('dark')){
+            body.classList.remove('dark');
+            body.classList.add('gradient');
+            toggleBtn.textContent = '🌙';
+        } else {
+            body.classList.remove('gradient');
+            body.classList.add('dark');
+            toggleBtn.textContent = '☀️';
+        }
+    });
+</script>
+
+</body>
+</html>

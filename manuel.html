@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rolly Boy Manuel - Portfolio</title>
+
+<style>
+    /* ===== BODY ===== */
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background 0.6s ease, color 0.6s ease;
+        color: #2c2c2c;
+        text-align: center;
+    }
+
+    /* ===== ANIMATED GRADIENT ===== */
+    body.gradient {
+        background: linear-gradient(135deg, #ff69b4, #ff4500, #ffa500);
+        background-size: 400% 400%;
+        animation: gradientFlow 12s ease infinite;
+    }
+
+    @keyframes gradientFlow {
+        0% { background-position: 0% 50%; }
+        25% { background-position: 50% 50%; }
+        50% { background-position: 100% 50%; }
+        75% { background-position: 50% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+        background: #121212;
+        color: #f0f0f0;
+        animation: none;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        background: rgba(51, 30, 24, 0.9);
+        color: #ffe0b2;
+        text-align: center;
+        padding: 50px 0;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+        transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    body.dark header {
+        background: #1c1c1c;
+        color: #f0f0f0;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 2.8em;
+        font-family: "Copperplate Gothic Bold", sans-serif;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 1.1em;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+        background-color: rgba(255, 255, 255, 0.7);
+        margin: 40px auto;
+        width: 80%;
+        max-width: 850px;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+        text-align: left;
+        color: #2c2c2c;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    body.dark section {
+        background-color: rgba(50,50,50,0.85);
+        color: #f0f0f0;
+    }
+
+    /* ===== ABOUT IMAGE ===== */
+    .about img {
+        display: block;
+        margin: 20px auto;
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border: 4px solid #d7ccc8;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: border 0.5s ease;
+    }
+
+    body.dark .about img {
+        border: 4px solid #ff69b4;
+    }
+
+    .about p {
+        text-align: justify;
+        font-size: 1.05em;
+    }
+
+    /* ===== HEADINGS ===== */
+    h2 {
+        text-align: center;
+        color: #8b5e3c;
+        margin-bottom: 20px;
+        font-size: 1.8em;
+    }
+
+    body.dark h2 {
+        color: #ff69b4;
+    }
+
+    /* ===== LISTS ===== */
+    ul {
+        list-style-type: square;
+        padding-left: 40px;
+    }
+
+    li {
+        margin: 10px 0;
+        font-size: 1.05em;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact a {
+        color: #d2691e;
+        text-decoration: none;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+    }
+
+    body.dark .contact a {
+        color: #ff69b4;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        text-align: center;
+        background: rgba(33, 20, 15, 0.95);
+        color: #f0d8b0;
+        padding: 15px 0;
+        margin-top: 40px;
+        font-size: 0.9em;
+        transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    body.dark footer {
+        background: #1c1c1c;
+        color: #f0f0f0;
+    }
+
+    /* ===== DARK MODE BUTTON ===== */
+    #theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 10px 14px;
+        font-size: 24px;
+        transition: transform 0.4s ease, background 0.4s ease;
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.1) rotate(20deg);
+        background: rgba(255,255,255,0.3);
+    }
+
+    body.dark #theme-toggle {
+        background: rgba(200,200,200,0.2);
+    }
+
+</style>
+</head>
+
+<body class="gradient">
+
+<!-- DARK MODE TOGGLE -->
+<button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+<header>
+    <h1>Rolly Boy Manuel</h1>
+    <p>Student | Sports Enthusiast | Helpful & Kind</p>
+</header>
+
+<section class="about">
+    <h2>About Me</h2>
+    <img src="C:\Users\LC\OneDrive\Documents\HCI\Group 5 portfolio\images/rolly.jfif" alt="Rolly Boy Manuel">
+    <p>I am Rollyboy Manuel, the kindest student in the world. I am a diligent child and helpful to others. My favorite sports are biking and basketball, and I am also good at all sports. I am a hardworking student.</p>
+</section>
+
+<section class="skills">
+    <h2>My Skills</h2>
+    <ul>
+        <li>Sportsmanship and Teamwork</li>
+        <li>HTML and Basic Web Design</li>
+        <li>Leadership and Cooperation</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+    </ul>
+</section>
+
+<section class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Sports Blog Website</h3>
+        <p>A simple website project that shares my favorite sports activities, tips, and personal experiences in biking and basketball.</p>
+    </div>
+    <div class="project">
+        <h3>Team Collaboration App</h3>
+        <p>A mini project idea focused on improving teamwork and productivity among classmates using basic HTML interfaces.</p>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:rollyboymanuel@gmail.com">rollyboymanuel@gmail.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/rollyboymanuel" target="_blank">facebook.com/rollyboymanuel</a></p>
+</section>
+
+<footer>
+    <p><a href="porfolio.html" class="back-link">⬅ Back to Team Portfolio</a></p>
+    <p>© 2025 Rolly Boy Manuel | My Personal Portfolio</p>
+</footer>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+        if(body.classList.contains('dark')){
+            body.classList.remove('dark');
+            body.classList.add('gradient');
+            toggleBtn.textContent = '🌙';
+        } else {
+            body.classList.remove('gradient');
+            body.classList.add('dark');
+            toggleBtn.textContent = '☀️';
+        }
+    });
+</script>
+
+</body>
+</html>

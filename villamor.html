@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Joshua Villamor - Portfolio</title>
+
+<style>
+    /* ===== BODY ===== */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        transition: background 0.6s ease, color 0.6s ease;
+    }
+
+    /* ===== GREEN GRADIENT BACKGROUND ===== */
+    body.gradient {
+        background: linear-gradient(135deg, #00b09b, #96c93d, #00b09b);
+        background-size: 300% 300%;
+        animation: natureFlow 8s ease infinite;
+    }
+
+    @keyframes natureFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+        background: #121212;
+        color: #e0e0e0;
+        animation: none;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        padding: 60px 20px;
+        background-color: rgba(0,0,0,0.25);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: background 0.5s ease;
+    }
+
+    body.dark header {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    h1 {
+        font-family: "Copperplate Gothic Bold", "Copperplate", fantasy;
+        font-size: 2.8em;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+    }
+
+    header p {
+        font-size: 1.2em;
+        color: #e9ffd9;
+        text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    }
+
+    /* ===== PROFILE IMAGE ===== */
+    .profile-img {
+        display: block;
+        margin: 20px auto;
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #a8e063;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, border 0.5s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+    body.dark .profile-img {
+        border: 4px solid #8fbc8f;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+        margin: 40px auto;
+        max-width: 800px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 25px 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        backdrop-filter: blur(4px);
+        text-align: left;
+        transition: background 0.5s ease;
+    }
+
+    body.dark section {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    h2 {
+        font-family: "Copperplate Gothic Bold", "Copperplate", fantasy;
+        color: #e9ffd9;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    /* ===== LISTS ===== */
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        background-color: rgba(255,255,255,0.15);
+        padding: 12px 15px;
+        border-left: 5px solid #a8e063;
+        border-radius: 8px;
+        margin: 10px 0;
+        transition: 0.3s;
+    }
+
+    li:hover {
+        background-color: rgba(255,255,255,0.25);
+        transform: scale(1.03);
+    }
+
+    body.dark li {
+        background-color: rgba(200,200,200,0.1);
+        border-left: 5px solid #8fbc8f;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        background-color: rgba(0,0,0,0.25);
+        padding: 20px;
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: #e9ffd9;
+        transition: background 0.5s ease;
+    }
+
+    body.dark footer {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    .back-link {
+        color: #e9ffd9;
+        text-decoration: underline;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .back-link:hover {
+        color: #d4ff7f;
+        text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
+
+    /* ===== DARK MODE TOGGLE BUTTON ===== */
+    #theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 10px 14px;
+        font-size: 24px;
+        transition: transform 0.4s ease, background 0.4s ease;
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.1) rotate(20deg);
+        background: rgba(255,255,255,0.3);
+    }
+
+    body.dark #theme-toggle {
+        background: rgba(200,200,200,0.2);
+    }
+
+</style>
+</head>
+
+<body class="gradient">
+
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+    <header>
+        <h1>Christian Joshua Villamor</h1>
+        <p>A Dedicated IT Student and Loyal Best Friend 🌱💻</p>
+    </header>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <img src="C:\Users\LC\OneDrive\Documents\HCI\Group 5 portfolio\images/villamor.jfif" alt="Christian Joshua Villamor" class="profile-img">
+        <p>
+            Hello! I'm <strong>Christian Joshua Villamor</strong>, a dedicated IT student with a deep passion for technology.  
+            I constantly immerse myself in the world of <strong>coding, networking, and systems</strong>, always eager to learn something new.  
+            My curiosity and drive push me to explore innovative ideas and use technology to create meaningful change.  
+            As the <strong>best friend of our group leader</strong>, I value teamwork, loyalty, and collaboration — because the best results come from working together with trust and friendship. 🤝
+        </p>
+    </section>
+
+    <section class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>Network Configuration and Troubleshooting</li>
+            <li>Web Development (HTML, CSS, JavaScript)</li>
+            <li>System Maintenance and Optimization</li>
+            <li>Collaboration and Problem-Solving</li>
+        </ul>
+    </section>
+
+    <section class="goals">
+        <h2>Goals & Aspirations</h2>
+        <p>
+            My goal is to leverage my IT skills to contribute to the <strong>ever-evolving tech landscape</strong>.  
+            I aim to build systems that are both efficient and user-friendly while continuing to learn and innovate.  
+            With dedication, teamwork, and passion — I strive to make a lasting impact in the field of technology.
+        </p>
+    </section>
+
+    <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="villamorchristianjoshuae@gmail.com">christianjoshua@example.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/share/1BeUapxYAh/" target="_blank">facebook.com/Christian Joshua Villamor</a></p>
+    </section>
+
+    <footer>
+        <p><a href="porfolio.html" class="back-link">⬅ Back to Team Portfolio</a></p>
+        <p>© 2025 Christian Joshua Villamor | Group 5 - The Innovators | University of Eastern Pangasinan</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', () => {
+            if(body.classList.contains('dark')){
+                body.classList.remove('dark');
+                body.classList.add('gradient');
+                toggleBtn.textContent = '🌙';
+            } else {
+                body.classList.remove('gradient');
+                body.classList.add('dark');
+                toggleBtn.textContent = '☀️';
+            }
+        });
+    </script>
+
+</body>
+</html>
